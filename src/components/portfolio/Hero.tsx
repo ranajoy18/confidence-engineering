@@ -39,7 +39,9 @@ export function Hero() {
             GITHUB
           </a>
           <a
-            href="#contact"
+            href="https://drive.google.com/drive/folders/1D-x2WY1iQb7NKe_aAd5N6ZmoHJQQ0vBD?usp=sharing"
+            target="_blank"
+            rel="noreferrer noopener"
             className="font-mono text-xs tracking-[0.15em] text-mute transition-colors hover:text-bone"
           >
             Download CV ↗

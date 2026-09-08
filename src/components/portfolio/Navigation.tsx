@@ -49,7 +49,9 @@ export function Navigation() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://drive.google.com/drive/folders/1D-x2WY1iQb7NKe_aAd5N6ZmoHJQQ0vBD?usp=sharing"
+            target="_blank"
+            rel="noreferrer noopener"
             className="border border-ember/30 px-3 py-1.5 font-mono text-[11px] tracking-[0.2em] text-ember transition-colors hover:bg-ember/10"
           >
             DOWNLOAD CV
@@ -83,7 +85,9 @@ export function Navigation() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="https://drive.google.com/drive/folders/1D-x2WY1iQb7NKe_aAd5N6ZmoHJQQ0vBD?usp=sharing"
+                target="_blank"
+                rel="noreferrer noopener"
                 onClick={() => setOpen(false)}
                 className="mt-2 inline-block border border-ember/30 px-3 py-2 font-mono text-[11px] tracking-[0.2em] text-ember"
               >
