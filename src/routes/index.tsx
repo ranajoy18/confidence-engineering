@@ -1,24 +1,49 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import { Navigation } from "@/components/portfolio/Navigation";
+import { Hero } from "@/components/portfolio/Hero";
+import { Metrics } from "@/components/portfolio/Metrics";
+import { CaseStudy } from "@/components/portfolio/CaseStudy";
+import { Philosophy } from "@/components/portfolio/Philosophy";
+import { ArchitectureDiagram } from "@/components/portfolio/ArchitectureDiagram";
+import { FeaturedWork } from "@/components/portfolio/FeaturedWork";
+import { Experiments } from "@/components/portfolio/Experiments";
+import { ContactCTA } from "@/components/portfolio/ContactCTA";
+import { Footer } from "@/components/portfolio/Footer";
+
+const TITLE = "Ranajoy Das | SDET & Test Automation Engineer";
+const DESCRIPTION =
+  "SDET and Test Automation Engineer specializing in Java, Selenium, REST Assured, Playwright, CI/CD, AWS and scalable test automation.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-ink font-sans text-bone">
+      <Navigation />
+      <main className="mx-auto max-w-[1200px] px-6">
+        <Hero />
+        <Metrics />
+        <CaseStudy />
+        <Philosophy />
+        <ArchitectureDiagram />
+        <FeaturedWork />
+        <Experiments />
+        <ContactCTA />
+        <Footer />
+      </main>
     </div>
   );
 }
