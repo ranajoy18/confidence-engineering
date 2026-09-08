@@ -6,7 +6,7 @@ function CountMetric({ target, suffix, label }: { target: number; suffix: string
   const value = useCountUp(target, shown);
   return (
     <div ref={ref} className="bg-ink-2 p-7 transition-colors hover:bg-ink-3">
-      <p className="font-display text-3xl font-semibold text-ember tabular-nums lg:text-[2.1rem]">
+      <p className="font-display text-2xl font-semibold text-ember tabular-nums lg:text-[1.75rem]">
         {value.toLocaleString()}
         {suffix}
       </p>
@@ -18,7 +18,7 @@ function CountMetric({ target, suffix, label }: { target: number; suffix: string
 function DeltaMetric({ from, to, label }: { from: string; to: string; label: string }) {
   return (
     <div className="bg-ink-2 p-7 transition-colors hover:bg-ink-3">
-      <p className="font-display text-3xl font-semibold text-ember lg:text-[2.1rem]">
+      <p className="font-display text-2xl font-semibold whitespace-nowrap text-ember lg:text-[1.75rem]">
         <span className="text-bone/45">{from}</span> <span className="text-ember">→</span> {to}
       </p>
       <p className="mt-3 font-mono text-[11px] tracking-[0.15em] text-mute">{label}</p>
