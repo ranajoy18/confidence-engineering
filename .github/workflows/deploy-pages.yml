@@ -48,6 +48,17 @@ jobs:
             exit 1
           fi
 
+      - name: Prepare static output for GitHub Pages
+        shell: bash
+        run: |
+          dir="${{ steps.output.outputs.directory }}"
+          # Skip Jekyll processing, which otherwise ignores `_`-prefixed files/folders.
+          touch "$dir/.nojekyll"
+          # Fall back to the prerendered index on unknown paths (client-side routing).
+          if [ -f "$dir/index.html" ]; then
+            cp "$dir/index.html" "$dir/404.html"
+          fi
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

@@ -9,5 +9,7 @@ export default defineConfig({
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts.
     server: { entry: "server" },
+    // Prerender to static HTML so the build can be hosted on GitHub Pages.
+    prerender: { enabled: true, crawlLinks: true },
   },
 });
